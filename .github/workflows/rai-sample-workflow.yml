@@ -25,15 +25,15 @@ jobs:
       id: aib
       uses: ./
       with:
-        location: 'eastus'
-        resourceGroupName: 'rogoyal'
-        sourceOSType: 'windows'
+        location: 'eastus2'
+        resourceGroupName: 'raiaib-rg'
+        sourceOSType: 'linux'
         sourceImageType: 'marketplace'
-        sourceImage: MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest
+        sourceImage: Canonical:UbuntuServer:18.04-LTS:latest
         customizerSource: '/home/runner/work/imageBuilder/homework'
         distributorType: 'sharedgalleryimage'
         distResourceId: '/subscriptions/439f6f90-fc63-4d40-8a25-33cdf46c730c/resourceGroups/rogoyal/providers/Microsoft.Compute/galleries/rogoyalsig/images/rogoyalimgdefn'
-        distLocation: 'eastus'
+        distLocation: 'eastus2'
 
     - name: print aib output
       run: echo output from aib ${{ steps.aib.outputs.imagebuilderRunStatus }} ${{ steps.aib.outputs.runOutputName }} ${{ steps.aib.outputs.customImageURI }}
