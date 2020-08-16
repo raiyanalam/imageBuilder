@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@v2
     
     - shell: bash
-      run: mkdir -p homework
+      run: mkdir -p installScripts
     
     - shell: bash
       run: |
