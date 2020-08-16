@@ -3,7 +3,7 @@ on: [push]
 jobs:      
   job1:
     runs-on: ubuntu-latest
-    name: A job to use action to run aib action
+    name: createCustomImage
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -13,8 +13,8 @@ jobs:
     
     - shell: bash
       run: |
-          echo Hello World! > homework/hello-world.txt |
-          echo Hello World! > homework/hello-world2.txt
+          echo "echo Installing World..." > installScripts/install-world.sh |
+          echo "echo Installing Universe..." > installScripts/install-universe.sh
     
     - name: Login via Az module
       uses: azure/login@v1.1
@@ -30,7 +30,7 @@ jobs:
         sourceOSType: 'linux'
         sourceImageType: 'marketplace'
         sourceImage: Canonical:UbuntuServer:18.04-LTS:latest
-        customizerSource: '/home/runner/work/imageBuilder/homework'
+        customizerSource: '/home/runner/work/imageBuilder/installScripts'
         distributorType: 'sharedgalleryimage'
         distResourceId: '/subscriptions/439f6f90-fc63-4d40-8a25-33cdf46c730c/resourceGroups/rogoyal/providers/Microsoft.Compute/galleries/rogoyalsig/images/rogoyalimgdefn'
         distLocation: 'eastus2'
