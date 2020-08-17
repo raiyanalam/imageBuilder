@@ -13,8 +13,8 @@ jobs:
     
     - shell: bash
       run: |
-          echo "echo Installing World..." > installScripts/install-world.sh |
-          echo "echo Installing Universe..." > installScripts/install-universe.sh
+          echo "echo Installing World... " > installScripts/install-world.sh |
+          echo "echo Installing Universe... " > installScripts/install-universe.sh
     
     - name: Login via Az module
       uses: azure/login@v1.1
