@@ -1,3 +1,4 @@
+# Test scenario for AIB action
 on: [push]
   
 jobs:      
